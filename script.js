@@ -104,6 +104,11 @@ function getMode() {
             highest_frequency = freq_object[element]
     }
 
+    if (highest_frequency <= 1) {
+        modes_text.innerHTML = "No mode";
+        return;
+    }
+
     // add to modes the data with highest frequency
     for (element in freq_object) {
         if (freq_object[element] == highest_frequency)
