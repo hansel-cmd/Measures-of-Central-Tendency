@@ -46,8 +46,67 @@
                     <p><strong>Multimodal</strong> - more than two values that are considered to be the mode </p>
                 </div>
                 <div class="col">
+                    <p class="fs-4">Midrange: <span id="midrange"></span></p>
+                    <p>Formula: MR = (lowest value + highest value) / 2</p>
+                    <p><strong>MR</strong> is the midrange</p>
+                    <p><strong>MR</strong> is a rough estimate of the middle</p>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col">
+                    <p class="fs-4">Weighted Mean </p>
+                    <p>Formula: X = <span>&#8721;</span> (weight_of_given * given_number) / <span>&#8721;</span> weight_of_given</p>
+                    <p>A type of mean that is calculated by multiplying the weight (or probability) associated with a particular event with its associated quantitative outcome and then summing all the products together.</p>
+                    <div class="table-responsive">
+                        <p><strong>X = 21.5 / 11 = 1.95</strong></p>
+                        <table class="table">
+                            <thead>
+                              <tr>
+                                <th scope="col">Subjects</th>
+                                <th scope="col">Grades</th>
+                                <th scope="col">No. Of Units</th>
+                                <th scope="col">(weight_of_given * given_number)</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>Math</td>
+                                <td>1.7</td>
+                                <td>3.0</td>
+                                <td>1.7 * 3.0 = 5.1</td>
+                              </tr>
+                              <tr>
+                                <td>Econ</td>
+                                <td>1.8</td>
+                                <td>3.0</td>
+                                <td>1.8 * 3.0 = 5.4</td>
+                              </tr>
+                              <tr>
+                                <td>Physics</td>
+                                <td>2.2</td>
+                                <td>5.0</td>
+                                <td>2.2 * 5.0 = 11</td>
+                              </tr>
+                              <tr>
+                                <td></td>
+                                <td></td>
+                                <td><strong>11</strong></td>
+                                <td><strong>21.5</strong></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
                     <p class="fs-4">Geometric Mean: <span id="mode"></span></p>
-                    <p>Formula: X = <span>&#8721;</span> given_number / total_number</p>
+                    <p>Formula: GM = <span>&radic;</span> (<span>&#8721;</span> given_numbers) </p>
+                    <p>It is the average value or mean which signifies the central tendency of the set of numbers by finding the products of their values.</p>
+                    <p>It is useful in finding the averagge of the percentage, rations, indexes, or growth rates.</p>
+                    <p>Most useful <strong>when numbers in the series are not independent of each other</strong> or if numbers tend to make large fluctuations.</p>
                 </div>
             </div>
         </div>

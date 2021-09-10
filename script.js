@@ -1,9 +1,14 @@
 const text_area = document.querySelector('#text-area');
 const mean_text = document.querySelector('#mean');
 const median_text = document.querySelector('#median');
+const modes_text = document.querySelector('#mode'); 
+const midrange_text = document.querySelector('#midrange');
 
 let data; // array of numbers
 let mean; // the mean of the data array
+let median; // the middle element of the data array (sorted)
+let modes = []; // assumed to be many modes : data with highest frequency
+let midrange; // the rough estimate of the middle
 
 
 
@@ -15,6 +20,13 @@ function calculate() {
 
     getMedian();
 
+    getMode();
+
+    getMidRange();
+
+    getWeightedMean();
+
+    getGeometricMean();
 }
 
 function getMean() {
@@ -63,4 +75,50 @@ function getMedian() {
     }
 
     median_text.innerHTML = median;
+}
+
+function getMode() {
+
+    let freq_object = data.reduce((retval, cur_data) => {
+
+        if (retval[cur_data] === undefined)
+            retval[cur_data] = []
+        
+        retval[cur_data].push(cur_data);
+        
+        return retval;
+    }, {});
+
+
+    let highest_frequency = 0;
+    // counts the frequency of each data
+    // gets the highest frequency number
+    for (element in freq_object) {
+        freq_object[element] = freq_object[element].length;
+        if (highest_frequency < freq_object[element])
+            highest_frequency = freq_object[element]
+    }
+
+    // add to modes the data with highest frequency
+    for (element in freq_object) {
+        if (freq_object[element] == highest_frequency)
+            modes.push(element);
+    }
+
+    modes_text.innerHTML = modes;
+}
+
+function getMidRange() {
+    
+    midrange = (data[0] + data[data.length - 1]) / 2;
+    midrange_text.innerHTML = midrange;
+}
+
+function getWeightedMean() {
+
+    
+}
+
+function getGeometricMean() {
+
 }
