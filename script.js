@@ -11,10 +11,19 @@ let modes = []; // assumed to be many modes : data with highest frequency
 let midrange; // the rough estimate of the middle
 
 
+function reset() {
+    data = [];
+    mean = 0;
+    median = 0;
+    modes = [];
+    midrange = 0;
+}
+
 
 function calculate() {
 
     // reset
+    reset();
 
     getMean();
 
@@ -23,10 +32,6 @@ function calculate() {
     getMode();
 
     getMidRange();
-
-    getWeightedMean();
-
-    getGeometricMean();
 }
 
 function getMean() {
@@ -112,13 +117,4 @@ function getMidRange() {
     
     midrange = (data[0] + data[data.length - 1]) / 2;
     midrange_text.innerHTML = midrange;
-}
-
-function getWeightedMean() {
-
-    
-}
-
-function getGeometricMean() {
-
 }
