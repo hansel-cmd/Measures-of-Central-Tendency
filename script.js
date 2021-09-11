@@ -49,7 +49,7 @@ function getMean() {
         return retval;
     }, []);
 
-    data.sort();
+    data.sort((a, b) => a - b);
 
     let sum = data.reduce((retval, cur_data) => {
         return retval + cur_data
